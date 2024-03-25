@@ -1,0 +1,84 @@
+{
+  "name": "atcoder-myenv",
+  "dockerComposeFile": [
+    "../docker-compose.yml"
+  ],
+  "service": "atcoder-myenv",
+  "workspaceFolder": "/project/src",
+  "shutdownAction": "stopCompose",
+  "remoteUser": "atcoder-user",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.pylance",
+        "ms-python.debugpy",
+        "ms-python.mypy-type-checker",
+        "ms-python.isort",
+        "ms-python.flake8",
+        "ms-python.black-formatter",
+        "vscodevim.vim",
+        "christian-kohler.path-intellisense",
+        "oderwat.indent-rainbow",
+        "mhutchie.git-graph",
+        "eamodio.gitlens",
+        "usernamehw.errorlens"
+      ],
+      "settings": {
+        "files.eol": "\n",
+        "files.insertFinalNewline": true,
+        "files.trimTrailingWhitespace": true,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+          "source.organizeImports": "explicit"
+        },
+        "[python]": {
+          "editor.defaultFormatter": "ms-python.black-formatter",
+          "editor.tabSize": 4
+        },
+        "python.defaultInterpreterPath": "/usr/local/bin/python3",
+        // black settings
+        "black-formatter.path": [
+          "/usr/local/bin/black"
+        ],
+        "black-formatter.args": [
+          "--line-length=119",
+          "--exclude='''(migrations | .mypy_cache | .pytest_cache | .tox | .venv | dist)'''"
+        ],
+        // flake8 settings
+        "flake8.path": [
+          "/usr/local/bin/flake8"
+        ],
+        "flake8.args": [
+          "--max-line-length=119",
+          "--max-complexity=10",
+          "--select=C,E,F,W,B",
+          "--ignore=E203"
+        ],
+        // mypy-type-checker settings
+        "mypy-type-checker.path": [
+          "/usr/local/bin/mypy"
+        ],
+        "mypy-type-checker.args": [
+          "--config-file=/tmp/mypy.ini"
+        ],
+        "mypy-type-checker.importStrategy": "fromEnvironment",
+        "mypy-type-checker.severity": {
+          "error": "Error",
+          "note": "Information",
+          "name-defined": "Warning"
+        },
+        // isort settings
+        "isort.path": [
+          "/usr/local/bin/isort"
+        ],
+        "isort.args": [
+          "--profile",
+          "black"
+        ],
+        // pytest settings
+        "python.testing.pytestPath": "${workspaceFolder}/.venv/bin/pytest"
+      }
+    }
+  }
+}
