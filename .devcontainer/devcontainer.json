@@ -1,9 +1,9 @@
 {
-  "name": "atcoder-myenv",
+  "name": "atcoder-pyenv",
   "dockerComposeFile": [
     "../docker-compose.yml"
   ],
-  "service": "atcoder-myenv",
+  "service": "atcoder-pyenv",
   "workspaceFolder": "/project/src",
   "shutdownAction": "stopCompose",
   "remoteUser": "atcoder-user",
