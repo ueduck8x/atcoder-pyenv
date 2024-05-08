@@ -23,7 +23,7 @@ mpmath==1.2.1
 # pandas==1.5.2
 # z3-solver==4.12.1.0
 scikit-learn==1.2.0
-ortools==9.5.2237
+ortools==9.10.4067
 # ac-library-python
 setuptools==66.0.0
 # cppyy==2.4.1
